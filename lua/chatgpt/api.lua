@@ -225,8 +225,8 @@ end
 function Api.setup()
   loadApiHost("OPENAI_API_HOST", "OPENAI_API_HOST", "api_host_cmd", function(value)
     Api.OPENAI_API_HOST = value
-    Api.COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/v1/completions"
-    Api.CHAT_COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/v1/chat/completions"
+    Api.COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/openai/deployments/text-davinci-003/completions?api-version=2023-07-01-preview"
+    Api.CHAT_COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/openai/deployments/text-davinci-003/completions?api-version=2023-07-01-preview"
     Api.EDITS_URL = "https://" .. Api.OPENAI_API_HOST .. "/v1/edits"
   end, "api.openai.com")
 
