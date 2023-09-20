@@ -128,7 +128,7 @@ Api.handle_response = vim.schedule_wrap(function(response, exit_code, cb)
   elseif json.error then
     cb("// API ERROR: " .. json.error.message)
   else
-    logger.warn("Message:" .. json)
+    logger.warn(json)
     local message = json.choices[1].message
     if message ~= nil then
       local message_response
