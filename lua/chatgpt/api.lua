@@ -93,10 +93,9 @@ function Api.make_call(url, params, cb)
     vim.notify("Cannot open temporary message file: " .. TMP_MSG_FILENAME, vim.log.levels.ERROR)
     return
   end
-  f:write(vim.fn.json_encode(url))
-  f:write(vim.fn.json_encode(cb))
   f:write(vim.fn.json_encode(params))
   f:close()
+  vim.notify("URL: : " .. url, vim.log.levels.ERROR)
   Api.job = job
     :new({
       command = "curl",
