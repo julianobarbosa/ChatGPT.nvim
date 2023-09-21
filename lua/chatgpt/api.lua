@@ -98,6 +98,7 @@ function Api.make_call(url, params, cb)
   vim.notify("URL: : " .. url, vim.log.levels.ERROR)
   Api.job = job
     :new({
+      logger.warn("URL: " .. url .. "TK : " .. Api.OPENAI_API_KEY),
       command = "curl",
       args = {
         url,
