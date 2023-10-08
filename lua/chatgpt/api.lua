@@ -40,6 +40,7 @@ function Api.chat_completions(custom_params, cb, should_stop)
             return
           end
         end
+        logger.warn("JSON :" .. chunk)
         for line in chunk:gmatch("[^\n]+") do
           local raw_json = string.gsub(line, "^data: ", "")
           if raw_json == "[DONE]" then
@@ -238,6 +239,7 @@ function Api.setup()
 
   loadApiKey("OPENAI_API_KEY", "OPENAI_API_KEY", "api_key_cmd", function(value)
     Api.OPENAI_API_KEY = value
+    logger.warn("API :" .. Api.OPENAI_API_KEY)
   end)
 end
 
