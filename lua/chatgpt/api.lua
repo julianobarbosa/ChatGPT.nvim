@@ -229,9 +229,9 @@ function Api.setup()
   loadApiHost("OPENAI_API_HOST", "OPENAI_API_HOST", "api_host_cmd", function(value)
     Api.OPENAI_API_HOST = value
     logger.warn("Host :" .. Api.OPENAI_API_HOST)
-    Api.COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/openai/deployments/gpt-35-turbo/chat/completions?api-version=2023-07-01-preview"
+    Api.COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/openai/deployments/gpt-4-32k/chat/completions?api-version=2023-07-01-preview"
     logger.warn("Comp :" .. Api.COMPLETIONS_URL)
-    Api.CHAT_COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/openai/deployments/gpt-35-turbo/chat/completions?api-version=2023-07-01-preview"
+    Api.CHAT_COMPLETIONS_URL = "https://" .. Api.OPENAI_API_HOST .. "/openai/deployments/gpt-4-32k/chat/completions?api-version=2023-07-01-preview"
     logger.warn("Chat :" .. Api.CHAT_COMPLETIONS_URL)
     Api.EDITS_URL = "https://" .. Api.OPENAI_API_HOST .. "/v1/edits"
   end, "api.openai.com")
